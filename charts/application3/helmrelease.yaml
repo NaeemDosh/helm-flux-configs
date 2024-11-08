@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: application3
+  namespace: default
+spec:
+  releaseName: application3
+  interval: 5m0s  # Sync interval to check for updates
+  chart:
+    spec:
+      chart: application3
+      sourceRef:
+        kind: GitRepository
+        name: flux-system
+        namespace: flux-system
+  values:
+    replicaCount: 2
+    image:
+      repository: enriquecatala/fastapi-helloworld
+      tag: latest
+    service:
+      type: ClusterIP
+      port: 5000

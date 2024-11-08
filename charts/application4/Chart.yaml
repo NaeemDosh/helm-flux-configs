@@ -1,4 +1,6 @@
 apiVersion: v2
 name: application4
+description: A Helm chart for Application4 (Adjust as needed)
 version: 0.1.0
-description: Helm chart for application4
+appVersion: "1.0"
+

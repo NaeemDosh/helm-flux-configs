@@ -5,20 +5,19 @@ metadata:
   namespace: default
 spec:
   releaseName: application4
-  interval: 5m0s  # Sync interval to check for updates
+  interval: 5m0s
   chart:
     spec:
-      chart: application4
+      chart: ./charts/application4  # Adjust the path accordingly
       sourceRef:
         kind: GitRepository
-        name: flux-system
+        name: flux-system  # Reference to the correct GitRepository in Flux
         namespace: flux-system
   values:
     replicaCount: 2
     image:
-      repository: asdkant/fastapi-hello-world
+      repository: asdkant/fastapi-hello-world   
       tag: latest
     service:
       type: ClusterIP
       port: 80
-

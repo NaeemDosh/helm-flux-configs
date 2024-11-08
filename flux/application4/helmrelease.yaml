@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: application4
+  namespace: default
+spec:
+  releaseName: application4
+  chart:
+    spec:
+      chart: ./charts/application4
+  values:
+    - ./values.yaml

@@ -5,13 +5,13 @@ metadata:
   namespace: default
 spec:
   releaseName: application3
-  interval: 5m0s  # Sync interval to check for updates
+  interval: 5m0s  # Ensure interval is set
   chart:
     spec:
       chart: application3
       sourceRef:
-        kind: GitRepository
-        name: flux-system
+        kind: GitRepository  # Ensure sourceRef is set
+        name: flux-system     # Reference the correct Git repository
         namespace: flux-system
   values:
     replicaCount: 2

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: application4
+version: 0.1.0
+description: Helm chart for application4
